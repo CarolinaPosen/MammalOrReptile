@@ -1,8 +1,15 @@
 package by.itacademy;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class MammalOrReptile {
+
+    private static final List<String> mammals = Arrays.asList();
+    private static final List<String> reptiles = Arrays.asList();
+
     public static void main(String[] args) {
-        System.out.println(determineClassOfOrganism(""));
+        System.out.println(determineClassOfOrganism("Platypus"));
     }
 
     private static String determineClassOfOrganism(String organism) {
@@ -10,7 +17,12 @@ public class MammalOrReptile {
         if (organism == null || organism.equals("")) {
             classOfOrganism = "incorrect input";
         } else {
-            classOfOrganism = (true) ? "Mammal" : "Reptile";
+            if(mammals.stream().anyMatch(e -> e.contains(organism))){
+                classOfOrganism = "mammals";
+            }
+            if(reptiles.stream().anyMatch(e -> e.contains(organism))){
+                classOfOrganism = "reptiles";
+            }
         }
         return classOfOrganism;
     }
