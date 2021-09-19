@@ -12,6 +12,11 @@ public class MammalOrReptile {
         System.out.println(determineClassOfOrganism("Platypus"));
     }
 
+    /**
+     *
+     * @param organism
+     * @return Answer who is Platypus mammal or reptile.
+     */
     private static String determineClassOfOrganism(String organism) {
         String classOfOrganism = "";
         if (organism == null || organism.equals("")) {
